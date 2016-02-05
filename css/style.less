@@ -380,23 +380,24 @@ input[type="text"]{
 
 
 // MEDIAS QUERYS
-@media screen and (min-width: 300px){
+@media screen and (min-width: 310px) and (min-width: 360px) {
+
 	.div_boton_desplegable{
-		display: none!important;
+		display:none!important;
 	}
 
 
 }
 
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 520px){
 
-	.activo{
-		background:@blanco!important; 
-		color: @azul!important;
-		background-position: 50% 103%!important;
-		// border-bottom: 0!important;
-	}
+.activo{
+	background:@blanco!important; 
+	color: @azul!important;
+	background-position: 50% 103%!important;
+	// border-bottom: 0!important;
+}
 
 .bg_big_plate{
 	min-height: 400px;
@@ -413,15 +414,15 @@ input[type="text"]{
 }
 
 .div_boton_desplegable{
-	// display: none!important;
-	height: 44px;
-	width: 100%;
-	padding: 10px;
-	color: #FFF;
-	font-size: 24px;
- 	background-color: @azul;	
- 	cursor: pointer;
- 	border-bottom: 1px solid #FFF;
+	display: block!important;
+	height: 44px!important;
+	width: 100%!important;
+	padding: 10px!important;
+	color: #FFF!important;
+	font-size: 24px!important;
+ 	background-color: @azul!important;	
+ 	cursor: pointer!important;
+ 	border-bottom: 1px solid #FFF!important;
 }
 
 .div_boton_desplegable span{
@@ -472,17 +473,11 @@ header nav ul a:hover{
 	border-bottom: 0;
 }
 
-	.div_boton_desplegable{
-		// display: block;
-		// z-index: 1;
-		
-	}
-	
-	.cont_menu_nav{
+.cont_menu_nav{
 		overflow: hidden;
 		z-index: 1;
 		height: 45px;
-	}
+}
 
 	header nav{
 		position: relative;
