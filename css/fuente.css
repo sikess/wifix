@@ -1,0 +1,11 @@
+@font-face {
+font-family: agency-fb;
+src: url('agency-fb.otf') format('opentype');
+}
+
+body{
+	/*font-family: agency-fb, arial;*/
+	font-family: arial;
+	font-size: 1.1em!important;
+/*	background: red;*/
+}
