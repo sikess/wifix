@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="css/font/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Wifi-X</title>
 </head>
 <body>
@@ -41,28 +40,33 @@ $(endif)
 	<img class="center-block logo paddiing_top20 hidden-xs visible-md visible-sm visible-lg" src="img/logo-large.png" alt="">
  </div>
 </header>
-	<div class="container-fluid hidden-lg hidden-md hidden-sm">	
-	    <div class="row">
-			<div class="div_boton_desplegable hidden-lg hidden-md hidden-sm"><span>Menu</span><i class="pull-right fa fa-th-list"></i></div>
-		</div>
+
+<div class="container-fluid hidden-lg hidden-md hidden-sm">	
+
+    <div class="row">
+		<div class="div_boton_desplegable hidden-lg hidden-md hidden-sm"><span>Menu</span><i class="pull-right fa fa-th-list"></i></div>
 	</div>
+	
+</div>
 
-<header class="cont_menu_nav">
-
+ <header class="cont_menu_nav">
 
 	<nav>
 		<ul>
-			<li><a class="activo" href="login.html">Conectarse</a></li>
-			<li><a href="tarifas.html">Tarifas</a></li>
-			<li><a href="about.html">¿Qué es Wifi-X?</a></li>
-			<li><a href="ayuda.html">Ayuda</a></li>
-			<li><a href="#">Contacto</a></li>
+			<li><a class="activo" href="login.html"><i class="fa fa-wifi"></i>Conectarse</a></li>
+			<li><a href="tarifas.html"><i class="fa fa-credit-card"></i>Tarifas</a></li>
+			<li><a href="about.html"><i class="fa fa-cogs"></i>¿Qué es Wifi-X?</a></li>
+			<li><a href="ayuda.html"><i class="fa fa-support"></i>Ayuda</a></li>
+			<li><a href="#"><i class="fa fa-envelope"></i>Contacto</a></li>
 		</ul>
 	</nav>
 
 </header>
 
-<section class="container-fluid gradiente_gris">
+
+
+
+<section class="container-fluid">
 	<div class="row cont_form">
 		<div class="container">
 			<form class="vertical-form" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
@@ -87,6 +91,51 @@ $(endif)
     </div>
 </section>
 
+
+<section class="cont_slider">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+<!-- 		<ol class="carousel-indicators">
+		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		</ol> -->
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+		<div class="item active">
+			<div class="row">
+				<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+				  <img class="img-responsive center-block" src="img/slider/computertix/xs.png" alt="...">
+				</div>
+
+				<div class="col-xs-12 hidden-xs">
+				  <img class="img-responsive center-block" src="img/slider/computertix/large.jpg" alt="...">
+				</div>
+			</div>
+		</div>
+
+		<div class="item">
+			<div class="row">
+				<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+				  <img class="img-responsive center-block" src="img/slider/salamanderstudio/xs.png" alt="...">
+				</div>
+
+				<div class="col-xs-12 hidden-xs">
+				  <img class="img-responsive center-block" src="img/slider/salamanderstudio/large.jpg" alt="...">
+				</div>
+			</div>
+		</div>
+
+		
+	 </div>
+
+	<!-- Controls -->
+
+	</div> <!-- Carousel -->
+</section>
+
+
 <footer class="container-fluis formato_footer">
 <div class="separador1"> </div>
 	<div class="container">
@@ -94,19 +143,58 @@ $(endif)
 			<div class="col-lg-12">
 				<img class="center-block" src="img/logo_albino.png" alt="">
 				<p>Conecta tu vida</p>
+
 			</div>
 		</div>
 	</div>
 	
 	<div class="cenefa_foot"></div>
-
 </footer>
 
-<script type="text/javascript" src="js/md5.js"></script>
+<div id="boxes" class="container center-block">
+
+ 
+<!-- POP UP PRINCIPAL -->  
+<div id="dialog1" class="window row ">
+
+	   <div class="container ">
+		  <div class="d-header cont_publi col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		  	
+		   
+		 <!-- col-lg-6 col-md-12 col-sm-12 col-xs-12 -->
+			<div class="center-block cont_publi">
+				
+				<div  class="reset_padd col-lg-12 col-md-12 col-sm-12 col-xs-11 center-block cont_timer">
+					<div id="cerrar" class="btn_cerrar center-block"></div>
+					<div class="center-block textos"><span cass="center-block"id="timer"></span></div>
+				</div>
+				<!-- <img id="publi_popup" class="center-block img-responsive" src="img/publipopup/salamanderstudio/popup_salamanderstudio.jpg" alt=""> -->
+				 <div id="publicidad_modal" class="center-block img-responsive la_publicidad">
+				</div>
+			</div>
+				<div id="tipmer"class="conteo center-block"></div>
+		  </div>
+
+		</div>
+
+
+</div>
+<!-- End of Login Dialog -->  
+
+
+
+<!-- Mask to cover the whole screen -->
+  <div id="mask"></div>
+</div>
+
+
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="md5.js"></script>
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.min.js"></script>
 <script src="js/menu.js"></script>
+<script src="js/ss.js"></script>
 
 
 </body>

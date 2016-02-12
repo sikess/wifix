@@ -9,7 +9,7 @@ ins{background-color:#ff9;color:#000;text-decoration:none}
 mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
 del{text-decoration:line-through}
 abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
-table{border-collapse:collapse;border-spacing:0}
+// table{border-collapse:collapse;border-spacing:0}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
 input,select{vertical-align:middle}
 
@@ -23,7 +23,12 @@ input,select{vertical-align:middle}
 // .COLORES
 
 // MIXIN
-
+body{
+	background-image:url("../img/gran_gris.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
 ._titulo(@colort,@hei,@lh,@fsize){
 	height: @hei;
 	text-align: center;
@@ -36,7 +41,7 @@ a{
 	text-decoration: none;
 }
 
-.gradiente_gris{
+.gradiente_grisd{
 	.gradient(#F5F5F5, #EEE, #FFF);
 }
 
@@ -116,9 +121,14 @@ a{
 }
 
 .cont_menu_nav{
-	min-height: 43px;
-	width: 100%;
+	height:auto;
+	width: 10!important;
+	// top: 100px;
 	font-size: 16px;
+	background-origin: red;
+	position: relative;
+	// background: @azul;
+	z-index: 1000;
 }
 
 
@@ -134,6 +144,10 @@ header nav ul li{
 	list-style: none;
 	display: inline-block;
 	color: #FFF;
+}
+
+header nav ul a i{
+	margin-right: 7px;
 }
 
 header nav ul a{
@@ -165,6 +179,16 @@ header nav ul a:hover{
 	background-repeat: no-repeat;
 }
 // .MENU XS
+
+// ADS
+	.ads_principal{
+		height: 100%;
+		width: 100%;
+		position: absolute!important;
+		background-color: @azul;
+		z-index: 0!important;
+	}
+// .ADS
 
 // SECIONES
 .cont_titulo{
@@ -212,7 +236,6 @@ header nav ul a:hover{
 
 .bg_big_plate{
 	min-height: 700px;
-	background-image: url("../img/big_plate.jpg");
 	position: relative;
 }
 
@@ -273,8 +296,8 @@ header nav ul a:hover{
 
 // FORMULARI
 .cont_form{
-	min-height: 500px;
-	margin-top: 40px;
+	min-height: auto;
+	margin-top: 20px;
 }
 
 input[type="text"]{
@@ -286,6 +309,15 @@ input[type="text"]{
  	padding-bottom: 30px;
  	text-align: center;
  	border: 1px solid @azul;
+ 	.candado;
+}
+
+.candado{
+	background-image: url("../img/candado.png");
+	background-repeat: no-repeat;
+	background-position: 3% 50%;
+	background-size: 5%;
+
 }
 
 .boton{
@@ -303,22 +335,27 @@ input[type="text"]{
 // .FORMULARIO
 
 // BOTON FALSO
-.fake_bt{
-	background-image: url("../img/boton_free.png");
+.un_boton(@boton_img){
+	background-image: url(@boton_img);
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 43px;
-	width: 202px;
-	margin-top:30px;
+	min-width: 202px;
+	margin-top:20px;
+	margin-bottom: 20px;
 	color: #FFF;
 	text-align: center;
 	line-height: 40px;
 	border: 0;
-	
+	cursor: pointer;
 }
 
-.fake_bt p{
+
+.fake_bt{
+	.un_boton("../img/boton_free.png");
+	 p{
 	margin-left: 32px;
+	}
 }
 
 .cont_form a{
@@ -380,7 +417,7 @@ input[type="text"]{
 
 
 // MEDIAS QUERYS
-@media screen and (min-width: 310px) and (min-width: 360px) {
+@media screen and (min-width: 610px) and (min-width: 630px) {
 
 	.div_boton_desplegable{
 		display:none!important;
@@ -390,7 +427,221 @@ input[type="text"]{
 }
 
 
-@media screen and (max-width: 520px){
+// FOR STATUS
+
+
+.medio{
+	min-height: 500px;
+}
+
+.cont_status{
+	text-align:center;
+	margin-top: 60px;
+	min-width: 300px;
+	position: relative;
+
+	table{
+
+		text-align: center;
+		margin: 0 auto;
+		min-width: 300px!important;
+	}
+
+	table th, i{
+		text-align: center;
+		padding: 10px;
+		background-color: @azul;
+		color: @blanco;
+
+	}
+
+	table tr td{
+		height: 30px;
+		padding: 10px;
+		margin-top: 10px;vertical-align: middle;
+	}
+
+	table tr td p{
+		text-align: right;
+	}
+}
+
+.td_icon{
+	background-color: @azul;
+	color: @blanco;
+	min-width: 180px;
+	border: 1px solid @azul;
+	// position: relative;
+}
+
+.td_info{
+	border: 1px solid @azul;
+	
+}
+
+.icon_celdas{
+	position: relative;
+}
+
+.icon_celdas img{
+		position: absolute;
+		top:-19px;
+		left: -90px;
+
+}
+
+// .FOR STATUS
+
+
+
+// CARRUSEL
+.cont_slider{
+	padding: 10px;
+	// min-height: 400px;
+}
+
+// .CARRUSEL
+
+// MODAL
+
+.cont_publi_modal{
+	position: relative;
+}
+
+#mask {
+  position:absolute!important;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+
+#dialog1{
+	color: @blanco;
+}
+
+.d-header{
+	margin: 0 auto;
+	// height: auto;
+	position: relative;
+
+}
+
+// #boxes .d-header {
+	
+// }
+
+#boxes .d-header {
+	width: 100%;
+}  
+
+.boxes{
+	height: auto;
+	width: auto;
+	position: relative;
+}
+
+
+#boxes .window {
+  position:fixed;
+  // width:440px;
+  min-height:inherit!important;
+  display:none;
+  z-index:9999;
+  height: auto!important;
+  width: auto!important;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#boxes #dialog {
+  top: 50px;
+  left: 0;
+  background-color:#ffffff;
+  position: relative;
+}
+
+#boxes #dialog1 {
+  // width:375px; 
+  // height:203px;
+}
+
+
+#dialog1 .d-blank {
+  height: auto;
+  width: auto;
+}
+
+
+.cont_publi{
+	position: relative!important;
+}
+
+.cont_timer{
+	margin: 0 auto;
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	bottom: 0;
+	left: 0;
+	margin-bottom: 0!important;
+	line-height: 15px!important;
+	padding-top: 30px!important;
+
+}
+
+.btn_cerrar{
+	.un_boton("../img/boton_time.png");
+	.cont_timer;
+}
+
+.textos{
+	background-color: rgba(00, 00, 00, 0.5);
+	height: auto;
+	display: block;
+	display: block;
+	padding: 10px;
+	width: 200px;
+	text-align: center;
+}
+
+.conteo{
+	// z-index:10101;
+	width: 100%!important;
+	position: absolute!important;
+	text-align: center!important;
+	top:30px;
+	
+}
+
+.cont_timer span{
+	// background-color: #000!important;
+	// width: 300px;
+	bottom: 0;
+	height: 50px;
+	margin-top: 50px;
+	padding: 10px;
+
+}
+
+.la_publicidad{
+	min-height: 400px;
+	min-width: 300px;
+	// background-color: red;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+
+}
+
+// .MODAL
+
+
+
+
+// MEDIA QUERYS
+@media screen and (max-width: 630px){
 
 .activo{
 	background:@blanco!important; 
@@ -423,6 +674,8 @@ input[type="text"]{
  	background-color: @azul!important;	
  	cursor: pointer!important;
  	border-bottom: 1px solid #FFF!important;
+ 	// position: absolute;
+ 	// z-index: 10002
 }
 
 .div_boton_desplegable span{
@@ -438,7 +691,7 @@ header{
 	// margin-left: -50;
 }
 .cont_menu_nav{
-	height: auto;
+	height: 0;
 	width: 100%;
 	position: absolute;
 }
@@ -475,8 +728,8 @@ header nav ul a:hover{
 
 .cont_menu_nav{
 		overflow: hidden;
-		z-index: 1;
-		height: 45px;
+		// z-index: 1;
+		// height: 45px;
 }
 
 	header nav{
@@ -486,4 +739,4 @@ header nav ul a:hover{
 
 // .MENU XS
 
-}
+}     

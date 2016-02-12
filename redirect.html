@@ -1,0 +1,83 @@
+$(if http-status == 302)Hotspot redirect$(endif)
+$(if http-header == "Location")$(link-redirect)$(endif)
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fuente.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta http-equiv="refresh" content="0; url=$(link-redirect)">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<link rel="stylesheet" href="css/font/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Wifi-X</title>
+</head>
+<body>
+
+
+
+<header class="cont_header container-fluid">
+ <div class="container reset_padd">		
+	<img class="center-block logo paddiing_top20 hidden-lg hidden-md hidden-sm" src="img/logo-xs.png" alt="">
+	<img class="center-block logo paddiing_top20 hidden-xs visible-md visible-sm visible-lg" src="img/logo-large.png" alt="">
+ </div>
+</header>
+	<div class="container-fluid hidden-lg hidden-md hidden-sm">	
+	    <div class="row">
+			<div class="div_boton_desplegable hidden-lg hidden-md hidden-sm"><span>Menu</span><i class="pull-right fa fa-th-list"></i></div>
+		</div>
+	</div>
+
+<header class="cont_menu_nav">
+
+
+	<nav>
+		<ul>
+			<li><a class="activo" href="login.html"><i class="fa fa-wifi"></i>Conectarse</a></li>
+			<li><a href="tarifas.html"><i class="fa fa-credit-card"></i>Tarifas</a></li>
+			<li><a href="about.html"><i class="fa fa-cogs"></i>¿Qué es Wifi-X?</a></li>
+			<li><a href="ayuda.html"><i class="fa fa-support"></i>Ayuda</a></li>
+			<li><a href="#"><i class="fa fa-envelope"></i>Contacto</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<section class="container-fluid gradiente_gris">
+	<div class="row cont_form">
+		<div class="container">
+			
+		</div>
+    </div>
+</section>
+
+<footer class="container-fluis formato_footer">
+<div class="separador1"> </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<img class="center-block" src="img/logo_albino.png" alt="">
+				<p>Conecta tu vida</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cenefa_foot"></div>
+
+</footer>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/menu.js"></script>
+
+
+</body>
+</html>

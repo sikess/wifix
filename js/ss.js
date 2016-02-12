@@ -1,99 +1,119 @@
-$(document).ready(function(){
-	var altura=$('.menu').offset().top;
-	$(window).on('scroll', function(){
-		if($(window).scrollTop()>altura){
-			$('.menu').addClass('menu-fixed');
-			$('.isotipo').removeClass('hide');
-		}else{
-			$('.menu').removeClass('menu-fixed');
-			$('.isotipo').addClass('hide');
-		}
-	});
+$(document).ready(function() {  
+
+    
 
 
 
+    $(".btn_cerrar").hide();
+    //Put in the DIV id you want to display
+    launchWindow('#dialog1');
+    
+    //if close button is clicked
+    $('.window .close').click(function () {
+        $('#mask').hide();
+        $('.window').hide();
+    });     
+    
+    //if mask is clicked
+        
+    
 
-var altura2=$('.seccion_cont1').offset().top;
-var alturaseca=altura2-40;
-$(window).on('scroll',function(){
-    if($(window).scrollTop()>alturaseca){
-         $("#item_corp").fadeIn();
-         $("#item_shop").fadeIn("slow");
-         $("#item_port").fadeIn(1000);
+    $(window).resize(function () {
+     
+        var box = $('#boxes .window');
+ 
+        //Get the screen height and width
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+      
+        //Set height and width to mask to fill up the whole screen
+        $('#mask').css({'width':maskWidth,'height':maskHeight});
+        $('#dialog1').css({'width':maskWidth,'height':maskHeight});       
+        //Get the window height and width
+        var winH = $(window).height();
+        var winW = $(window).width();
+
+        //Set the popup window to center
+        box.css('top',  winH/2 - box.height()/2);
+        box.css('left', winW/2 - box.width()/2);
+
+     
+    }); 
+    
+});
+
+function launchWindow(id) {
+    
+        //Get the screen height and width
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+    
+        //Set heigth and width to mask to fill up the whole screen
+        $('#mask').css({'width':maskWidth,'height':maskHeight});
+        
+        //transition effect     
+        $('#mask').fadeIn(1000);    
+        $('#mask').fadeTo("slow",0.9);  
+    
+        //Get the window height and width
+        var winH = $(window).height();
+        var winW = $(window).width();
+              
+        //Set the popup window to center
+        $(id).css('top',  winH/2-$(id).height()/2-45);
+        $(id).css('left', winW/2-$(id).width()/2);
+        $(id).css({'width':maskWidth,'height':maskHeight}); 
+
+
+        $(id).fadeIn(1000); 
+    
+
+}
+
+function timer(time,update,complete) {
+    var start = new Date().getTime();
+    var interval = setInterval(function() {
+        var now = time-(new Date().getTime()-start);
+        if( now <= 0) {
+            clearInterval(interval);
+            complete();
+        }
+        else update(Math.floor(now/1000));
+    },100); // the smaller this number, the more accurate the timer will be
+}
+
+
+timer(
+    10000, // milliseconds
+    function(timeleft) { // called every step to update the visible countdown
+        document.getElementById('timer').innerHTML = "Publicidad: "+timeleft+"segs.";
+    },
+    function() { // what to do after
+        document.getElementById('timer').innerHTML=" Cerrar"
+        $('#cerrar').click(function () {
+        // $(this).hide();
+        $('#mask').hide();
+
+        $('.window').hide();
+    }); 
+     $('.btn_cerrar').show();  
     }
-    // else{
-    //     $("#item_corp").fadeOut();
-    //     $("#item_shop").fadeOut();
-    //     $("#item_port").fadeOut();
-    // }
-
-});
+);
 
 
+function cargar_imagen_random(){
 
-    $('h2').append('<a href="#top" class="gototop">Subir</a>');
-    linkInterno = $('a[href^="#"]');
-    linkInterno.on('click',function(e) {
-	e.preventDefault();
-	var href = $(this).attr('href');
-	// alert(href);
-	$('html, body').animate({ scrollTop : $( href ).offset().top }, 'slow', 'easeInOutExpo');
-	});
+    bgImageTotal=2; // ... cantidad de imagenes a rotar
 
-    $(window).scroll(function(){
-    	var barra=$(window).scrollTop();
-    	var posicion=barra*0.03;
+    randomNumber = Math.round(Math.random()*(bgImageTotal-1))+1;
 
-        $('link_menu').css({
-            'font-size':'0.5em'
-        });
+    imgPath=('img/publi_modal/'+randomNumber+'.jpg'); // ...full path a las imagenes
 
+    $('#publicidad_modal').css('background-image', ('url("'+imgPath+'")')); // ... Mi DIV
+    // $('div#publicidad_modal').html("<img src='"+imgPath+"'>");
 
-    	$('.seccion_cont1').css({
-    		'background-position':'50%'+posicion+'%'
-            // 'min-height':'900px'
-    	});
+}
+cargar_imagen_random();
 
-
-    	$('.seccion_cont2').css({
-    		'background-position':'50%'+''+posicion+'%'
-    	});
-
- 		$('.seccion_cont3').css({
-    		'background-position':'50%'+''+posicion+'%'
-    	});
-
-    	$('.bg1_seccion2').css({
-    		'background-position':'50%'+posicion+'%'
-    	});
-    });
-	
-
-    var altpantalla=$(window).height();
-    // alert(altpantalla); 
-    // $(window).on(function(){
-    $('.seccion_cont1').css({
-        'min-height':altpantalla+'px'
-        // });
-    });
-
-        $('.bg1_seccion2').css({
-        'min-height':altpantalla+'px'
-        // });
-    });
-
-     $('.seccion_cont2').css({
-        'min-height':altpantalla+'px'
-        // });
-    });
-
-      $('.seccion_cont3').css({
-        'min-height':altpantalla+'px'
-        // });
-    });
-
-      // alert(altpantalla);
-
-});
 
 

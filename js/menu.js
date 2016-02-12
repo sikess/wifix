@@ -1,9 +1,11 @@
 $(document).ready(main);
-
+var maskWidth = $(window).width();
 var contador=1;
+
 
 function main(){
 	$('.div_boton_desplegable').click(function(){
+		$('.cont_menu_nav').show();
 
 		// $('nav').toggle();
 		if(contador==1){

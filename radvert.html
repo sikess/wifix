@@ -1,0 +1,131 @@
+<html>
+<head>
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fuente.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>Wifi-X</title>
+<meta http-equiv="refresh" content="2; url=$(link-orig)">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<style type="text/css">
+<!--
+textarea,input,select {
+	background-color: #FDFBFB;
+	border: 1px #BBBBBB solid;
+	padding: 2px;
+	margin: 1px;
+	font-size: 14px;
+	color: #808080;
+}
+
+body{ color: #737373; font-size: 12px; font-family: verdana; }
+
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+img {border: none;}
+td { font-size: 12px; color: #7A7A7A; }
+
+-->
+</style>
+<script language="JavaScript">
+<!--
+    var popup = '';
+    function openOrig() {
+	if (window.focus) popup.focus();
+	location.href = '$(link-orig)';
+    }
+    function openAd() {
+	location.href = '$(link-redirect)';
+    }
+    function openAdvert() {
+	if (window.name != 'hotspot_advert') {
+		popup = open('$(link-redirect)', 'hotspot_advert', '');
+		setTimeout("openOrig()", 1000);
+		return;
+	}
+	setTimeout("openAd()", 1000);
+    }
+//-->
+</script>
+</head>
+<body onLoad="openAdvert()">
+
+<div class="cont_status">
+					<table class="">
+						<tr>
+							<th colspan="2"><i class="fa fa-check-circle"></i>Conexión exitosa</th>
+						</tr>
+
+						<tr>
+							<td></td>
+						</tr>
+
+						<tr>
+		
+							<td class="td_icon"><span class="icon_celdas"><img src="img/trans_icon.png" alt=""></span><p>Transferencia:</p> </td>
+							<td class="td_info">$(bytes-in-nice) / $(bytes-out-nice)</td>
+
+						</tr>
+
+						<tr>
+							<td></td>
+						</tr>
+
+						<tr>
+		
+							<td class="td_icon"><span class="icon_celdas"><img src="img/time_icon.png" alt=""></span><p>Tiempo: </p></td>
+							<td class="td_info"> $(session-time-left)</td>
+
+						</tr>
+
+					</table> 
+				</div>
+
+
+
+
+<table width="100%" height="100%">
+<tr>
+	<td align="center" valign="middle">
+	Advertisement.
+	<br><br>
+	If nothing happens, open
+	<a href="$(link-redirect)" target="hotspot_advert">advertisement</a>
+	manually.
+	</td>
+</tr>
+</table>
+
+
+
+<footer class="container-fluis formato_footer">
+<div class="separador1"> </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<img class="center-block" src="img/logo_albino.png" alt="">
+				<p>Conecta tu vida</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cenefa_foot"></div>
+
+</footer>
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/menu.js"></script>
+
+
+
+</body>
+</html>
